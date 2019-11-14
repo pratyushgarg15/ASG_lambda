@@ -25,7 +25,7 @@ def lambda_handler():
             without_tags.append(all_asg[i]['AutoScalingGroupName'])    
 
     for name in without_tags:
-        delete_asg = client.delete_auto_scaling_group(AutoScalingGroupName=name)
+        delete_asg = client.delete_auto_scaling_group(AutoScalingGroupName=name, ForceDelete=True)
 
     return delete_asg    
 
